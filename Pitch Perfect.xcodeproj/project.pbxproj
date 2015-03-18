@@ -16,6 +16,7 @@
 		195C5D701AB5073B00DE89EC /* microphone~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 195C5D6F1AB5073B00DE89EC /* microphone~iphone.png */; };
 		195C5D731AB5BB7600DE89EC /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195C5D721AB5BB7600DE89EC /* PlaySoundsViewController.swift */; };
 		195C5D751AB5C07600DE89EC /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 195C5D741AB5C07600DE89EC /* movie_quote.mp3 */; };
+		19C6AF9B1AB90785000CAF57 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6AF9A1AB90785000CAF57 /* RecordedAudio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		195C5D6F1AB5073B00DE89EC /* microphone~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone~iphone.png"; sourceTree = "<group>"; };
 		195C5D721AB5BB7600DE89EC /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		195C5D741AB5C07600DE89EC /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
+		19C6AF9A1AB90785000CAF57 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		195C5D4C1AB501A700DE89EC /* Pitch Perfect */ = {
 			isa = PBXGroup;
 			children = (
+				19C6AF991AB90764000CAF57 /* Classes */,
 				195C5D711AB5BB5300DE89EC /* ViewControllers */,
 				195C5D4F1AB501A700DE89EC /* AppDelegate.swift */,
 				195C5D531AB501A700DE89EC /* Main.storyboard */,
@@ -127,6 +130,14 @@
 				195C5D721AB5BB7600DE89EC /* PlaySoundsViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		19C6AF991AB90764000CAF57 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				19C6AF9A1AB90785000CAF57 /* RecordedAudio.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C6AF9B1AB90785000CAF57 /* RecordedAudio.swift in Sources */,
 				195C5D521AB501A700DE89EC /* RecordSoundsViewController.swift in Sources */,
 				195C5D731AB5BB7600DE89EC /* PlaySoundsViewController.swift in Sources */,
 				195C5D501AB501A700DE89EC /* AppDelegate.swift in Sources */,

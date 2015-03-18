@@ -15,6 +15,7 @@ class PlaySoundsViewController: UIViewController {
     
     var player: AVAudioPlayer?
     var file = "movie_quote"
+    var receivedAudio: RecordedAudio?
     
     // MARK: - Lifecycle
     
@@ -27,14 +28,16 @@ class PlaySoundsViewController: UIViewController {
 //        player = AVAudioPlayer(contentsOfURL: NSURL(string: fileLocation!), error: &error)
         
         
-        if var filePath = NSBundle.mainBundle().pathForResource(file, ofType: "mp3") {
-            var filePathURL = NSURL.fileURLWithPath(filePath)
-            self.player = AVAudioPlayer(contentsOfURL: filePathURL, error: &error)
-            self.player?.enableRate = true
-        } else {
-            println("Path is empty")
-        }
-
+//        if var filePath = NSBundle.mainBundle().pathForResource(file, ofType: "mp3") {
+//            var filePathURL = NSURL.fileURLWithPath(filePath)
+//            self.player = AVAudioPlayer(contentsOfURL: filePathURL, error: &error)
+//            self.player?.enableRate = true
+//        } else {
+//            println("Path is empty")
+//        }
+        
+        self.player = AVAudioPlayer(contentsOfURL: receivedAudio?.filePathURL, error: &error)
+        self.player?.enableRate = true
     }
 
     override func didReceiveMemoryWarning() {
