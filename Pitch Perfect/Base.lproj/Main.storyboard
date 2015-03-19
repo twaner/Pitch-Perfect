@@ -41,17 +41,24 @@
                                     <action selector="stopRecodingTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pi0-cB-61U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK2-xi-Uf5">
-                                <rect key="frame" x="210" y="425" width="48" height="48"/>
-                                <state key="normal" image="pause">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK2-xi-Uf5">
+                                <rect key="frame" x="174" y="440" width="51" height="34"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pauseButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VpK-Tc-cTe"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQg-av-HqC">
-                                <rect key="frame" x="342" y="424" width="50" height="50"/>
-                                <state key="normal" image="restart">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQg-av-HqC">
+                                <rect key="frame" x="376" y="440" width="58" height="34"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="restartButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fay-xh-kA3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -59,15 +66,21 @@
                             <constraint firstItem="dIZ-Mi-qTn" firstAttribute="top" secondItem="vMU-Jh-nIB" secondAttribute="bottom" constant="29" id="5E3-He-Gpx"/>
                             <constraint firstAttribute="centerX" secondItem="Nkm-UE-6m9" secondAttribute="centerX" id="5x2-SM-DtL"/>
                             <constraint firstItem="Nkm-UE-6m9" firstAttribute="top" secondItem="dIZ-Mi-qTn" secondAttribute="bottom" constant="22" id="EEF-2b-cTj"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NQg-av-HqC" secondAttribute="bottom" constant="126" id="KLp-J2-QWD"/>
                             <constraint firstAttribute="centerY" secondItem="vMU-Jh-nIB" secondAttribute="centerY" id="LeK-Uw-b0E"/>
+                            <constraint firstItem="Nkm-UE-6m9" firstAttribute="leading" secondItem="ZK2-xi-Uf5" secondAttribute="trailing" constant="50" id="OXy-jj-7If"/>
                             <constraint firstAttribute="centerX" secondItem="dIZ-Mi-qTn" secondAttribute="centerX" id="PCT-sO-0Ra"/>
+                            <constraint firstItem="NQg-av-HqC" firstAttribute="leading" secondItem="Nkm-UE-6m9" secondAttribute="trailing" constant="51" id="Tc1-XC-6L9"/>
                             <constraint firstAttribute="centerX" secondItem="vMU-Jh-nIB" secondAttribute="centerX" id="ixf-30-CG5"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZK2-xi-Uf5" secondAttribute="bottom" constant="126" id="sfN-Qh-wav"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="GdX-b4-AxV"/>
                     <connections>
+                        <outlet property="pauseButton" destination="ZK2-xi-Uf5" id="MgA-v0-yZT"/>
                         <outlet property="recordButton" destination="vMU-Jh-nIB" id="pny-CB-NTT"/>
                         <outlet property="recordingLabel" destination="dIZ-Mi-qTn" id="FVT-pj-Ar6"/>
+                        <outlet property="restartButton" destination="NQg-av-HqC" id="4te-y3-oo4"/>
                         <outlet property="stopButton" destination="Nkm-UE-6m9" id="rTF-0X-34H"/>
                         <segue destination="bOp-Mx-Bv7" kind="show" identifier="stopRecodingSegue" id="Ojs-Uz-wYb"/>
                     </connections>
@@ -177,8 +190,6 @@
         <image name="darthvader" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone.png" width="100" height="100"/>
-        <image name="pause" width="48" height="48"/>
-        <image name="restart" width="96" height="96"/>
         <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
     </resources>
