@@ -24,11 +24,9 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         var error: NSError? = nil
         self.player = AVAudioPlayer(contentsOfURL: receivedAudio?.filePathURL, error: &error)
         self.player?.enableRate = true
-        
         self.audioEngine = AVAudioEngine()
         self.audioFile = AVAudioFile(forReading: receivedAudio?.filePathURL, error: &error)
     }
@@ -43,14 +41,20 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func slowButtonTapped(sender: UIButton) {
         playAudio(0.5, reset: true)
+        self.audioEngine.stop()
+        self.audioEngine.reset()
     }
     
     @IBAction func fastButtonTapped(sender: UIButton) {
         playAudio(1.5, reset: true)
+        self.audioEngine.stop()
+        self.audioEngine.reset()
     }
     
     @IBAction func stopButtonTapped(sender: UIButton) {
         self.player?.stop()
+        self.audioEngine.stop()
+        self.audioEngine.reset()
     }
     
     @IBAction func playChipmunkTapped(sender: UIButton) {
@@ -58,7 +62,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func darthButtonTapped(sender: UIButton) {
-        
+        playAudioWithVariablePitch(-1000)
     }
 
     // MARK: - Helper methods

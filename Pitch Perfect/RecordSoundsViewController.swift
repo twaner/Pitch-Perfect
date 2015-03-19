@@ -20,14 +20,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Custom work
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-//        stopButton.enabled = false
         stopButton.hidden = true
     }
 
@@ -37,10 +33,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-//        //TODO: Show text "recoding in progress"
-//        //TODO: Record the user's voice
-        println("In recoding")
-        recordingLabel.hidden = false
+
         recordingLabel.text =  "Recording in Progress"
         stopButton.hidden = false
         recordButton.enabled = false
@@ -63,13 +56,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
         
     }
-    //stopButtonSegue
+
     
     @IBAction func stopRecodingTapped(sender: UIButton) {
-        recordingLabel.hidden = true
-        recordingLabel.text =  "Press to Record"
+        recordingLabel.text =  "Tap to Record"
         stopButton.hidden = true
         recordButton.enabled = true
+//        self.audioRecorder.pause()
         self.audioRecorder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
@@ -80,12 +73,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         
         if flag {
-            // save recorded audio
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathURL = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
+            recordedAudio = RecordedAudio(filePathURL: recorder.url, title: recorder.url.lastPathComponent!)
             
-            // move to segue
             self.performSegueWithIdentifier("stopRecodingSegue", sender: recordedAudio)
         } else {
             println("Recording not finished")
